@@ -1,0 +1,24 @@
+{
+  "name": "mycalendar",
+  "private": true,
+  "dependencies": {
+    "@fullcalendar/core": "^6.1.14",
+    "@fullcalendar/daygrid": "^6.1.14",
+    "@fullcalendar/interaction": "^6.1.14",
+    "@fullcalendar/timegrid": "^6.1.14",
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "5.4.4",
+    "chart.js": "^4.4.3",
+    "chartkick": "^5.0.1",
+    "highcharts": "^11.4.4",
+    "turbolinks": "^5.2.0",
+    "webpack": "4.46.0",
+    "webpack-cli": "3.3.12"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "webpack-dev-server": "3"
+  }
+}

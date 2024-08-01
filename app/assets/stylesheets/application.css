@@ -1,0 +1,80 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+
+ *= require simple_calendar
+ *= require_tree .
+ *= require_self
+ */
+ * {
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    font-family: "Comic Sans MS", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ",
+      Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+  
+  header {
+    background-color: #ffffff;
+    height: 60px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 20000;
+    width: 100%;
+    top: 0;
+  }
+
+  header a {
+    color: rgb(0, 0, 0); 
+    text-decoration: none; 
+  }
+  /*header h1 {
+    color: white;
+    margin-left: 20px;
+  }*/
+
+  .title{
+    color: rgb(0, 0, 0);
+    margin-left: 25px;
+    display: flex;
+    align-items: flex-end;
+    font-family: "Comic Sans MS";
+  }
+
+  .header-list {
+    display: flex;
+    align-items: center;
+  }
+  header ul {
+    display: flex;
+  }
+  header li {
+    list-style: none;
+    margin-right: 40px;
+  }
+
+  footer {
+    color: white;
+    height: 20px;
+    background-color: #000;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    justify-content: flex-end;
+  }

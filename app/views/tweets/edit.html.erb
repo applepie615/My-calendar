@@ -1,0 +1,31 @@
+<h1 class="theme">投稿編集</h1>
+<div class="tweetedit">
+  <div class="todoedit">
+    <%= form_for @tweet do |f| %>
+      <%= f.label :todo  %>
+      <p><%= f.text_area :thing, :size => "30×2" %></p>
+      <%= f.label :"日付"  %>
+      <p><%= f.date_field :date_date, :size => 10 %></p>
+      <%= f.label :"時刻"  %>
+      <p><%= f.time_field :date_time, :size => 10 %></p>
+      <%= f.label :"どこでする？"  %>
+      <p><%= f.text_field :address, :size => 30 %></p>
+      <p><input type="submit" value="編集する" class="button"></p>
+    <% end %>
+  </div>
+
+
+  <div class="eventedit">
+    <%= form_for @events do |f| %>
+      <%= f.label :title %>
+      <p><%= f.text_field :title %></p>
+        <%= f.label :start_time, "いつから？" %>
+          <p><%= f.date_field :start_time %></p>
+          <%= f.label :end_time,"いつまで？/１日だけの予定の場合、未記入可" %>
+          <p><%= f.date_field :end_time %></p>
+      <p><input type="submit" value="編集する" class="button"></p>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to "ホームに戻る", tweets_path, class:'button001' %>

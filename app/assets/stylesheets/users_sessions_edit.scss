@@ -1,0 +1,55 @@
+.field{
+    padding: 1px;
+}
+
+.cancel{
+    padding: 5px;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #474747;
+    background: #4ec3d35e;/*背景色*/
+    border-left: double 7px #4ec4d3;/*左線*/
+    border-right: double 7px #4ec4d3;/*右線*/
+    width: 50%;
+    margin-left: 25%;
+}
+
+.cancelaccount{
+    margin-top: 70px;
+}
+
+.button002 {
+    background: #eee;
+    border-radius: 3px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 200px;
+    padding: 10px 25px;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    font-weight: 500;
+    margin-top: 30px;
+}
+.button002:hover {
+    background: #313131;
+    color: #FFF;
+}
+.button002:after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-top: 3px solid #313131;
+    border-right: 3px solid #313131;
+    transform: rotate(45deg) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    border-radius: 1px;
+    transition: 0.3s ease-in-out;
+}
+.button002:hover:after {
+    border-color: #FFF;
+}

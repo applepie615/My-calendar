@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mycalendar</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.3/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.css"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="title">
+        <h1>Mycalendar</h1>
+        <h4>マイカレ。</h4>
+      </div>
+
+      <div class="header-list">
+        <ul>
+          <li><%= link_to "ホーム", tweets_path %></li>
+          <li><%= link_to "新規投稿", new_tweet_path %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+          <li>
+              <% if user_signed_in? %>
+                <%= link_to "マイページ", user_path(current_user.id) %>
+              <% end %>
+          </li>
+        </ul>
+      </div>
+    </header>
+    
+    <main>
+      <%= yield %>
+    </main>
+    
+    <footer>
+      <h6>Copyright © GeekSalon All Rights Reserved.</h6>
+    </footer>
+  </body>
+</html>

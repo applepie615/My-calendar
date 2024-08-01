@@ -1,0 +1,154 @@
+.slidebox{
+    height: 650px;
+    width: 90%;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.sentotihiro{
+    opacity: 0 ;
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+    position: absolute;
+    left: 0%;
+    -webkit-animation: anime 20s 0s infinite;
+    animation: anime 20s 0s infinite;
+}
+.sentotihiro:nth-last-of-type(2){
+    -webkit-animation-delay: 5s;
+    animation-delay: 5s;
+}
+.sentotihiro:nth-last-of-type(3){
+    -webkit-animation-delay: 10s;
+    animation-delay: 10s;
+}
+.sentotihiro:nth-last-of-type(4){
+    -webkit-animation-delay: 15s;
+    animation-delay: 15s;
+}
+
+@keyframes anime{
+    0%{
+    opacity: 0;
+    }
+    30%{
+    opacity: 1;
+    }
+    35%{
+    opacity: 1;
+    }
+    50%{
+    opacity: 0;
+    z-index: 9;
+    }
+    100%{
+    opacity: 0;
+    }
+}
+@-webkit-keyframes anime{
+    0%{
+    opacity: 0;
+    }
+    30%{
+    opacity: 1;
+    }
+    35%{
+    opacity: 1;
+    }
+    50%{
+    opacity: 0;
+    z-index: 9;
+    }
+    100%{
+    opacity: 0;
+    }
+}
+
+.slide_textBox {
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    text-align: center;
+    max-width: 500px;
+    z-index: 10000;
+    padding: 16px;
+    font-family: "MS PMincho";
+    color: #fff;
+    font-size: 20px;
+}
+
+.container {
+    display: flex;
+    padding:20px;
+    margin-bottom: 20px;
+}
+
+.calendar{
+    width: 130%;
+    height: 150%;
+    padding:20px;
+    background-color: #f7f2f1;
+    margin-top: 10px;
+}
+
+.todo{
+    width: 30%;
+    font-size: 9pt;
+    border:#000000 3px double; /*境界線の指定*/
+    padding:10px;
+    margin-right: 20px;
+	background-color: #f7f2f1;/*ボックス背景色*/
+	padding:2.5em 2em 2em;/*ボックス内側余白*/
+	position:relative;/*配置(ここを基準に)*/
+    margin-top: 10px;
+}
+.todo .box-title {
+	background-image: repeating-linear-gradient(-45deg,#F6EEEC 0, #F6EEEC 3px,#fafafa 3px,#fafafa 6px);/*ストライプ*/
+	border-left: 2px dotted rgba(0,0,0,.1);/* テープのギザギザ左*/
+	border-right: 2px dotted rgba(0,0,0,.1);/* テープのギザギザ右*/
+	transform: rotate(-2deg);/*テープの傾き*/
+	font-size: 12pt;/*タイトル文字の大きさ*/
+	padding: 10px 20px;/*タイトルの余白*/
+	line-height: 1;/*タイトルの行の高さ*/
+	position:absolute;	/*配置(ここを動かす)*/
+	top: -15px; /*上から（-10px）移動*/
+	left: 20px; /*左から(20px)移動*/
+}
+
+.tweets-container{
+    margin-bottom: 20px;
+}
+
+h3{
+    font-size: 12pt;
+}
+
+.tweet{
+    padding:10px;
+    font-size: 10pt;
+}
+
+.btn {
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 50px;
+	margin: auto;
+	font-weight: bold;
+	border: 2px solid #27acd9;
+	color: #27acd9;
+	transition: 0.5s;
+    margin-top: 5px;
+}
+.btn:hover {
+	color: #fff;
+	background: #27acd9;
+}
+
+.link{
+    font-size: 9pt;
+}

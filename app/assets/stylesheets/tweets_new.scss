@@ -1,0 +1,269 @@
+.new{    
+    padding:40px;
+}
+
+.theme{
+  position: relative;
+  padding: 1.5rem 1rem;
+}
+
+.theme:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  content: '';
+  background-image: -webkit-repeating-linear-gradient(135deg, #000, #000 1px, transparent 2px, transparent 5px);
+  background-image: repeating-linear-gradient(-45deg, #000, #000 1px, transparent 2px, transparent 5px);
+  background-size: 7px 7px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.todoall{
+  display: flex;
+  margin-bottom: 100px;
+}
+
+.text1{
+  font-size: 20pt;
+  font-family: serif;
+  position: absolute;
+  top: 55%;
+  left: 65%;
+  font-weight: bold;
+}
+
+.newtodo{
+    width: 50%;
+    position:relative;
+    font-weight: bold;
+    border-top:#000000 solid 2px;  /*上の境界線の指定*/
+    border-bottom:#000000 solid 2px;  /*下の境界線の指定*/
+    padding:10px 20px;
+    background-color: #f7f2f1;
+}
+.newtodo:before {
+    content:"";
+    position:absolute;
+    top:-10px;  /*左の境界線を上にはみ出させる数値の指定*/
+    left:10px; /*左の境界線を内側に寄せる数値の指定*/
+    width:2px; /*左の境界線の太さの指定*/
+    height:calc(100% + 20px); /*左の境界線の長さの指定*/
+    background:#000000; /*左の境界線の色の指定*/
+}
+.newtodo:after {
+    content:"";
+    position:absolute;
+    top:-10px;  /*右の境界線を上にはみ出させる数値の指定*/
+    right:10px; /*右の境界線を内側に寄せる数値の指定*/
+    width:2px; /*右の境界線の太さの指定*/
+    height:calc(100% + 20px); /*右の境界線の長さの指定*/
+    background:#000000; /*右の境界線の色の指定*/
+}
+
+.todo_time{
+  display: flex;
+  padding: auto;
+  position:relative;
+  justify-content: center;
+}
+
+.Date_field {
+  margin-right: 10px ;
+}
+
+
+.eventall{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.text2{
+    font-size: 20pt;
+    font-family: serif;
+    position: absolute;
+    top:110%;
+    left: 15%;
+    font-weight: bold;
+}
+
+.event{
+    width: 50%;
+    height: auto;
+    font-weight: bold;
+    justify-content: space-between;
+    align-items: center;
+    position:relative;
+    border-top:#000000 solid 2px;  /*上の境界線の指定*/
+    border-bottom:#000000 solid 2px;  /*下の境界線の指定*/
+    padding:10px 20px;
+    background-color: #f7f2f1;;
+}
+.event:before {
+    content:"";
+    position:absolute;
+    top:-10px;  /*左の境界線を上にはみ出させる数値の指定*/
+    left:10px; /*左の境界線を内側に寄せる数値の指定*/
+    width:2px; /*左の境界線の太さの指定*/
+    height:calc(100% + 20px); /*左の境界線の長さの指定*/
+    background:#000000; /*左の境界線の色の指定*/
+    }
+.event:after {
+    content:"";
+    position:absolute;
+    top:-10px;  /*右の境界線を上にはみ出させる数値の指定*/
+    right:10px; /*右の境界線を内側に寄せる数値の指定*/
+    width:2px; /*右の境界線の太さの指定*/
+    height:calc(100% + 20px); /*右の境界線の長さの指定*/
+    background:#000000; /*右の境界線の色の指定*/
+}
+
+.field *{
+  margin-bottom: 10px;
+}
+
+.newtitle{
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding: 0 65px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.newtitle:before,.newtitle:after {
+  position: absolute;
+  top: calc(50% - 3px);
+  width: 50px;
+  height: 4px;
+  content: '';
+  border-top: solid 2px #000;
+  border-bottom: solid 2px #000;
+}
+
+.newtitle:before {
+  left: 0;
+}
+
+.newtitle:after {
+  right: 0;
+}
+
+.button {
+    display       : inline-block;
+    border-radius : 14%;          /* 角丸       */
+    font-size     : 9pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 5px 21px;   /* 余白       */
+    background    : rgba(255, 127, 0, 0.53);     /* 背景色     */
+    color         : #000000;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 3px 3px 3px #666666;  /* 影の設定 */
+    border        : 2px solid rgba(255, 127, 0, 0.53);    /* 枠の指定 */
+    margin-top    : 10px;
+}
+.button:hover {
+    box-shadow    : none;        /* カーソル時の影消去 */
+    color         : rgba(255, 127, 0, 0.53);     /* 背景色     */
+    background    : #5050507e;     /* 文字色     */
+}
+
+/* Cool infinite background scrolling animation.
+ * Twitter: @kootoopas
+ */
+
+/* Exo thin font from Google. */
+@import url(https://fonts.googleapis.com/css?family=Exo:100);
+
+/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
+$bg-url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC";
+$bg-width: 50px;
+$bg-height: 50px;
+
+/* Animations */
+@-webkit-keyframes bg-scrolling-reverse {
+  100% { background-position: $bg-width $bg-height; }
+}
+@-moz-keyframes    bg-scrolling-reverse {
+  100% { background-position: $bg-width $bg-height; }
+}
+@-o-keyframes      bg-scrolling-reverse {
+  100% { background-position: $bg-width $bg-height; }
+}
+@keyframes         bg-scrolling-reverse {
+  100% { background-position: $bg-width $bg-height; }
+}
+
+@-webkit-keyframes bg-scrolling {
+  0% { background-position: $bg-width $bg-height; }
+}
+@-moz-keyframes    bg-scrolling {
+  0% { background-position: $bg-width $bg-height; }
+}
+@-o-keyframes      bg-scrolling {
+  0% { background-position: $bg-width $bg-height; }
+}
+@keyframes         bg-scrolling {
+  0% { background-position: $bg-width $bg-height; }
+}
+
+/* Main styles */
+body {
+  
+  font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
+  text-align: center;
+  /* img size is 50x50 */
+  background: url($bg-url) repeat 0 0;
+  
+  -webkit-animation: bg-scrolling-reverse .92s infinite; /* Safari 4+ */
+  -moz-animation:    bg-scrolling-reverse .92s infinite; /* Fx 5+ */
+  -o-animation:      bg-scrolling-reverse .92s infinite; /* Opera 12+ */
+  animation:         bg-scrolling-reverse .92s infinite; /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function:    linear;
+  -o-animation-timing-function:      linear;
+  animation-timing-function:         linear;
+
+    font-weight: 100;
+    font-style: normal;
+    height: 100%; 
+  }
+
+.button001 {
+    background: #eee;
+    border-radius: 3px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 150px;
+    padding: 10px 25px;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    font-weight: 500;
+}
+.button001:hover {
+    background: #313131;
+    color: #FFF;
+}
+.button001:after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-top: 3px solid #313131;
+    border-right: 3px solid #313131;
+    transform: rotate(45deg) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    border-radius: 1px;
+    transition: 0.3s ease-in-out;
+}
+.button001:hover:after {
+    border-color: #FFF;
+}

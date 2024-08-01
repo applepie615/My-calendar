@@ -1,0 +1,48 @@
+<h1 class="theme">投稿詳細</h1>
+    <div class="detail">
+        <div class="tododetail">
+            <h2>To Do</h2>
+                    <div class="tweet">
+                        <%= @tweet.thing %>
+                        <p><%= @tweet.date_date %></p>
+                        <p><%= l @tweet.date_time, format: :short, default: '' %></p>
+                        <p><%= @tweet.address %></p>
+                    </div>
+            <p><%= link_to "編集する", edit_tweet_path(@tweet.id) %></p>
+            <p><%= button_to "完了", tweet_path(@tweet.id), method: :delete, class:'btn' %></p>
+        
+            <div class="comment-wrapper">
+                <div class="comment">
+                    <p>コメント一覧</p>
+                </div>
+                <% @comments.each do |c| %>
+                    <div>
+                    <%= c.content %>
+                    <p><%= link_to "編集する", edit_tweet_comment_path(@tweet,c) %></p>
+                    <%= button_to "削除する", tweet_comment_path(@tweet,c), method: :delete %>
+                    </div>
+                    <br>
+                <% end %>
+
+                <% if user_signed_in? %>
+                    <%= form_with(model: [@tweet, @comment], local: true) do |f| %>
+                        <%= f.text_area :content %>
+                        <%= button_tag type: "submit" do %>
+                            <i class="far fa-comments"></i> コメントする
+                        <% end %>
+                    <% end %>
+                <% end %>
+            </div>
+        </div>
+
+        <div class="eventdetail">
+            <h2>イベント</h2>
+                    <div class="eventtitle">
+                        <%= @events.title %>
+                    </div>
+            <p><%= link_to "編集する", edit_tweet_path(@events.id) %></p>
+            <p><%= button_to "削除する", tweet_path(@events.id), method: :delete %></p>
+        </div>
+</div>
+
+<%= link_to "ホームに戻る", tweets_path, class:'button001' %>

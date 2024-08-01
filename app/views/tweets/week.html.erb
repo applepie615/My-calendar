@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="todo">
+        <h1>To Do リスト</h1>
+            <h3>就活関連</h3>
+                <div class="tweets-container">
+                    <% @jobsearch.each do |t| %>
+                        <div class="tweet">
+                            <%= t.thing %>
+                            <%= t.date_date %>
+                            <%= t.date_time %>
+                            <%= t.address %>
+                            <%= link_to "詳細へ", tweet_path(t.id) %>
+                            <%= link_to "編集する", edit_tweet_path(t.id) %>
+                            <%= button_to "削除する", tweet_path(t.id), method: :delete %>
+                        /div>
+                    <% end %>
+                </div>
+
+            <h3>研究関連</h3>
+                <div class="tweets-container">
+                    <% @study.each do |t| %>
+                        <div class="tweet">
+                            <%= t.thing %>
+                            <%= t.date_date %>
+                            <%= t.date_time %>
+                            <%= t.address %>
+                            <%= link_to "詳細へ", tweet_path(t.id) %>
+                            <%= link_to "編集する", edit_tweet_path(t.id) %>
+                            <%= button_to "削除する", tweet_path(t.id), method: :delete %>
+                        </div>
+                    <% end %>
+                </div>
+
+            <h3>大学関連</h3>
+                <div class="tweets-container">
+                    <% @university.each do |t| %>
+                        <div class="tweet">
+                            <%= t.thing %>
+                            <%= t.date_date %>
+                            <%= t.date_time %>
+                            <%= t.address %>
+                            <%= link_to "詳細へ", tweet_path(t.id) %>
+                            <%= link_to "編集する", edit_tweet_path(t.id) %>
+                            <%= button_to "削除する", tweet_path(t.id), method: :delete %>
+                        </div>
+                    <% end %>
+                </div>
+
+            <h3>その他</h3>
+                <div class="tweets-container">
+                    <% @other.each do |t| %>
+                        <div class="tweet">
+                            <%= t.thing %>
+                            <%= t.date_date %>
+                            <%= t.date_time %>
+                            <%= t.address %>
+                            <%= link_to "詳細へ", tweet_path(t.id) %>
+                            <%= link_to "編集する", edit_tweet_path(t.id) %>
+                            <%= button_to "削除する", tweet_path(t.id), method: :delete %>
+                        </div>
+                    <% end %>
+                </div>
+    </div>
+
+        <p data-trigger class="opacityFadeIn">
+            <%= week_calendar(attribute: :start_time, start_attribute: :start_time, end_attribute: :end_time, events: @events) do |date, events| %>
+                <%= date %>
+                    <% events.each do |event| %>
+                        <p><%= link_to event.title, event %></p>
+                <% end %>
+            <% end %>
+        </p>
+    </div>
+</div>

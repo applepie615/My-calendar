@@ -1,0 +1,51 @@
+<div class="profileall">
+  <div class="profiledetail">
+    <div class="shinchokuritu">
+      <h1 class="graph">Todo残量</h1>
+        <p>※何も表示されなければGood👍</p>
+      <canvas id="myChart"></canvas>
+        <script>
+        var ctx = document.getElementById("myChart");
+        var myChart = new Chart(ctx, {
+          type: 'radar',
+          data: {
+            labels: ["就活", "研究", "大学", "その他"],
+            datasets: 
+            [
+              {
+                label: 'Todo 残量',
+                backgroundColor: 'rgba(128,128,128,0.5)',
+                borderColor: 'rgba(128,128,128,1.0)',
+                data: [<%= @jobsearch.count %>, <%= @study.count %>, <%= @university.count %>, <%= @other.count %>]
+                }
+            ]
+          },
+          options: {
+              scale: {
+                  ticks: {
+                      suggestedMin: 0,
+                      suggestedMax: 5
+                  }
+              }
+          }
+        });
+        </script>
+    </div>
+
+    <div class="profile">
+      <% if @user.photo.attached? %>
+        <%= image_tag @user.photo, class: "rounded-circle", size: '90x120'%>
+      <% end %>
+
+      <h1 class="box-title">profile</h1>
+        <p>名前 : <%= @user.name %></p>
+        <p>メールアドレス : <%= @user.email %></p>
+        <p>プロフィール : <%= @user.profile %></p>
+      <% if current_user.id == @user.id %>
+        <%= link_to "編集する", edit_user_registration_path %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<p><%= link_to "ホームに戻る", tweets_path, class:'button001' %></p>

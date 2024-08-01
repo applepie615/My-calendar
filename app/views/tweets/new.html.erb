@@ -1,0 +1,64 @@
+<div class="newtweet">
+    <h1><div class="theme">新規投稿</div></h1>
+
+    <div class="new">
+        <div class="todoall">
+            <div class="newtodo">
+                <h2 class="newtitle">todo 投稿</h2>
+                    <%= form_for @tweet do |f| %>
+                        <div class="field">
+                            <div class="Thing_field">         <%#データ型がstringで自由記述の入力フォーム %>
+                                <%= f.label :Todo  %>
+                                    <p><%= f.text_area :thing, :size => "30×2" %></p>
+                            </div>
+                            <div class="todo_time">
+                                <div class="Date_field">         <%#データ型がintegerで数字のみを入力するフォーム %>
+                                    <%= f.label :"日付"  %>
+                                        <p><%= f.date_field :date_date, :size => 10 %></p>
+                                </div>
+                                <div class="Time_field">         <%# データ型がintegerで数字のみを入力するフォーム %>
+                                    <%= f.label :"時刻"  %>
+                                        <p><%= f.time_field :date_time, :size => 10 %></p>
+                                </div>
+                            </div>
+                            <div class="Adress_field">        <%# データ型がtextで自由記述の入力フォーム %>
+                                <%= f.label :"どこでする？"  %>
+                                    <p><%= f.text_field :address, :size => 30 %></p>
+                            </div>
+                            <%= f.label :"カテゴリー"  %>
+                            <p><%= f.select :category, [["就活", "jobsearch"], ["研究", "study"], ["大学", "university"], ["その他", "other"]], include_blank: "選択してください" %></p>
+                        </div>
+                        <p><input type="submit" value="投稿" class="button"></p>
+                    <% end %>
+            </div>
+        
+            <div class="text1">やることの可視化で後回しを減らす。</div>
+        </div>
+
+        <div class="eventall">
+            <div class="event">
+                <h2 class="newtitle">イベント投稿</h2>
+                    <%= form_with(model: @events, local: true) do |form| %>
+                        <div class="field">
+                            <div class="event_title">
+                                <%= form.label :title %>
+                                <p><%= form.text_field :title %></p>
+                            </div>
+                            <div class="time">
+                                <%= form.label :start_time,"いつから？" %>
+                                <p><%= form.date_field :start_time %></p>
+                                <%= form.label :end_time,"いつまで？/１日だけの予定の場合、未記入可" %>
+                                <p><%= form.date_field :end_time %></p>
+                            </div>
+                        </div>
+                            <input type="submit" value="投稿" class="button">
+                    <% end %>
+            </div>
+
+            <div class="text2">日々の生活を彩る。</div>
+        </div>
+    </div>
+
+    <%= link_to "ホームに戻る", tweets_path, class:'button001' %>
+
+</div>

@@ -1,0 +1,85 @@
+<div class="slidebox">
+    <%= image_tag "C:/Users/81802/Desktop/mycalendar/app/assets/images/AdobeStock_405231145.jpeg",class:"sentotihiro"%>
+    <%= image_tag "C:/Users/81802/Desktop/mycalendar/app/assets/images/AdobeStock_219384538.jpeg",class:"sentotihiro"%>
+    <%= image_tag "C:/Users/81802/Desktop/mycalendar/app/assets/images/kouyou.jpeg",class:"sentotihiro"%>
+    <%= image_tag "C:/Users/81802/Desktop/mycalendar/app/assets/images/1720014_m.jpg",class:"sentotihiro"%>
+</div>
+<div class="slide_textBox">
+  <h1 class="slide_copy">予定を一目で</h1>
+    <p class="slide_text">自己管理を簡単にする。</p>
+</div>
+
+<div class="container">
+  <div class="todo">
+    <h1 class="box-title">To Do リスト</h1>
+      <h3>就活関連</h3>
+        <div class="tweets-container">
+          <% @jobsearch.each do |t| %>
+            <div class="tweet">
+              <%= t.thing %>
+              <p><%= t.date_date %></p>
+              <p><%= l t.date_time, format: :short, default: '' %></p>
+              <p><%= t.address %></p>
+              <%= link_to "詳細へ", tweet_path(t.id), class:'link' %>
+              <%= link_to "編集する", edit_tweet_path(t.id), class:'link' %>
+              <%= button_to "完了", tweet_path(t.id), method: :delete, class:'btn' %>
+            </div>
+          <% end %>
+        </div>
+
+      <h3>研究関連</h3>
+        <div class="tweets-container">
+          <% @study.each do |t| %>
+            <div class="tweet">
+              <%= t.thing %>
+              <p><%= t.date_date %></p>
+              <p><%= l t.date_time, format: :short, default: '' %></p>
+              <p><%= t.address %></p>
+              <%= link_to "詳細へ", tweet_path(t.id), class:'link' %>
+              <%= link_to "編集する", edit_tweet_path(t.id), class:'link' %>
+              <%= button_to "完了", tweet_path(t.id), method: :delete, class:'btn' %>
+            </div>
+          <% end %>
+        </div>
+
+      <h3>大学関連</h3>
+        <div class="tweets-container">
+          <% @university.each do |t| %>
+            <div class="tweet">
+              <%= t.thing %>
+              <p><%= t.date_date %></p>
+              <p><%= l t.date_time, format: :short, default: '' %></p>
+              <p><%= t.address %></p>
+              <%= link_to "詳細へ", tweet_path(t.id), class:'link' %>
+              <%= link_to "編集する", edit_tweet_path(t.id), class:'link' %>
+              <%= button_to "完了", tweet_path(t.id), method: :delete, class:'btn' %>
+            </div>
+          <% end %>
+        </div>
+
+      <h3>その他</h3>
+        <div class="tweets-container">
+          <% @other.each do |t| %>
+            <div class="tweet">
+              <%= t.thing %>
+              <p><%= t.date_date %></p>
+              <p><%= l t.date_time, format: :short, default: '' %></p>
+              <p><%= t.address %></p>
+              <%= link_to "詳細へ", tweet_path(t.id), class:'link' %>
+              <%= link_to "編集する", edit_tweet_path(t.id), class:'link' %>
+              <%= button_to "完了", tweet_path(t.id), method: :delete, class:'btn' %>
+            </div>
+          <% end %>
+        </div>
+  </div>
+
+    <div class="calendar">
+      <%= month_calendar(attribute: :start_time, start_attribute: :start_time, end_attribute: :end_time, events: @events) do |date, events| %>
+          <%= date %>
+        <% events.each do |event| %>
+          <p><%= link_to event.title, event %></p>
+        <% end %>
+      <% end %>
+    </div>
+
+</div>

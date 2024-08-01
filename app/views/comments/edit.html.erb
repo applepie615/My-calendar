@@ -1,0 +1,7 @@
+<div class="box2-1">
+    <%= form_for(@comment, url: tweet_comment_path(@comment)) do |f| %>
+        <%= f.label :"コメント内容" %>
+        <p><%= f.text_field :content, :size => 60 %></p>
+        <p><input type="submit" value="編集する" class="button"></p>
+    <% end %>
+</div>
